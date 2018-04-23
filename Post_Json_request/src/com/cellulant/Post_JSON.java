@@ -30,33 +30,10 @@ public class Post_JSON {
 	 }
 
 	 public static void Post_JSON() throws JSONException {
-			String query_url = "http://197.159.100.249:9001/hub/services/paymentGateway/JSON/";
+			String query_url = " // URL HERE ";
 			
 			
-			String json = " {\n"
-							+ " 	\"countryCode\": \"ZM\",\n"
-							+ " 	\"function\": \"BEEP.pushPayments\",\n"
-							+ " 	\"payload\": \"<Json Encoded string of the Payload below>\",\n"
-							+ " 	\"credentials\": {\n"
-							+ " 		\"username\": \"username\",\n"
-							+ " 		\"password\": \"password\"\n"
-							+ " 	},\n"
-							+ " 	\"packet\": [{\n"
-							+ " 		\"serviceCode\": \"ZM-MTN-AIRTIME\",\n"
-							+ " 		\"MSISDN\": \"260975469186\",\n"
-							+ " 		\"invoiceNumber\": \"\",\n"
-							+ " 		\"accountNumber\": \"260975469186\",\n"
-							+ " 		\"payerTransactionID\": \"CLIENT_UNIQUE_TRANSACTION_544944115593\",\n"
-							+ " 		\"amount\": 100,\n"
-							+ " 		\"hubID\": \"\",\n"
-							+ " 		\"narration\": \"MTN Airtime topup\",\n"
-							+ " 		\"datePaymentReceived\": \"2017-11-04 13:27:21\",\n"
-							+ " 		\"extraData\": \"\",\n"
-							+ " 		\"currencyCode\": \"ZMK\",\n"
-							+ " 		\"customerNames\": \"George Kihara\",\n"
-							+ " 		\"paymentMode\": \"Online Payment\"\n"
-							+ " 	}]\n"
-							+ " }";
+			String json = "JSON to be Posted";
 
 			try {
 				 URL url = new URL(query_url);
@@ -76,10 +53,7 @@ public class Post_JSON {
 				 try (InputStream in = new BufferedInputStream(conn.getInputStream())) {
 						
 						String result = IOUtils.toString(in, "UTF-8");
-						System.out.println("JSON Response = " + result);
-//						JSONObject myResponse = new JSONObject(result);
-//						System.out.println("authStatus " + myResponse.getInt("authStatus.authStatusCode"));
-//						System.out.println("authStatusDescription " + myResponse.getString("authStatusDescription"));
+						System.out.println("JSON Response = " + result);						
 				 } finally {
 						IOUtils.closeQuietly(in);
 				 }
